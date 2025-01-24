@@ -1,0 +1,158 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #2a9d8f;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #e9c46a;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+main h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2a9d8f;
+}
+
+/* Form Styles */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+form input[type="date"],
+form input[type="text"],
+form input[type="time"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2a9d8f;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #264653;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2a9d8f;
+    color: white;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Hidden Message */
+.hidden {
+    display: none;
+    color: #2a9d8f;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #d32f2f; /* Merah sedikit lebih gelap */
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Tombol Hapus di Update Jadwal */
+#scheduleList button {
+    margin-top: 10px;
+    padding: 8px 16px;
+}
+
+/* Menambahkan sedikit efek bayangan */
+button:active {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Jadwal yang diupdate tampil dalam tabel */
+#updateMessage {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2a9d8f;
+    margin-bottom: 20px; /* Jarak dengan tombol */
+    padding: 10px;
+    background-color: #e9f7f6; /* Latar belakang hijau muda */
+    border-radius: 5px;        
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+/* Tabel untuk menampilkan jadwal yang diupdate */
+#scheduleTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#scheduleTable th,
+#scheduleTable td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#scheduleTable td button:focus {
+    outline: none;
+}

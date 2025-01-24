@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar - Jadwal Kajian Subuh 2025</title>
+    <link rel="stylesheet" href="../css/login.css" />
+  </head>
+  <body>
+    <!-- Registration Form -->
+    <section class="login-wrapper">
+      <div class="login-card">
+        <h2>Daftar Akun</h2>
+        <p>Pilih apakah Anda ingin mendaftar sebagai User atau Admin</p>
+        <form id="signupForm">
+          <div class="input-group">
+            <input type="text" id="username" name="username" required />
+            <label for="username">Username</label>
+          </div>
+          <div class="input-group">
+            <input type="password" id="password" name="password" required />
+            <label for="password">Password</label>
+            <button type="button" id="togglePassword">Lihat</button>
+          </div>
+          <div class="input-group">
+            <select id="role" name="role" required>
+              <option value="" disabled selected>Select</option>
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+          <button type="submit" class="login-btn">Daftar</button>
+          <p id="signupMessage" class="hidden"></p>
+        </form>
+        <div class="login-option">
+          <p>Sudah memiliki akun?</p>
+          <a href="login.html" class="login-link">Login di sini</a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Toggle password visibility
+      document.getElementById("togglePassword").addEventListener("click", function () {
+        const passwordField = document.getElementById("password");
+        const toggleButton = document.getElementById("togglePassword");
+
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+          toggleButton.textContent = "Sembunyikan";
+        } else {
+          passwordField.type = "password";
+          toggleButton.textContent = "Lihat";
+        }
+      });
+
+      // Handle form submission
+      document
+        .getElementById("signupForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+          const role = document.getElementById("role").value;
+          const signupMessage = document.getElementById("signupMessage");
+
+          // Simple validation for demonstration purposes
+          if (username && password && role) {
+            // Save the user details in localStorage (simulate account creation)
+            localStorage.setItem(username, JSON.stringify({ username, password, role }));
+            signupMessage.textContent = "Akun berhasil dibuat!";
+            signupMessage.style.color = "green";
+            signupMessage.classList.remove("hidden");
+          } else {
+            signupMessage.textContent = "Harap lengkapi semua data!";
+            signupMessage.style.color = "red";
+            signupMessage.classList.remove("hidden");
+          }
+        });
+    </script>
+  </body>
+</html>

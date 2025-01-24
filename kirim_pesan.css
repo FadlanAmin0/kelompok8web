@@ -1,0 +1,119 @@
+/* Reset dasar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  /* Modal Container */
+  .modal-dialog {
+    max-width: 500px;
+    margin: 50px auto;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  /* Header */
+  .modal-header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .modal-content {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .btn-close:hover {
+    color: #f94144;
+    transform: scale(1.2);
+  }
+  
+
+  /* Form Style */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form .mb-3 {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #2a9d8f;
+    outline: none;
+    box-shadow: 0 0 5px rgba(42, 157, 143, 0.5);
+  }
+  
+  /* Submit Button */
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    padding: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #21867a;
+  }
+  
+  /* Responsif */
+  @media (max-width: 576px) {
+    .modal-dialog {
+      margin: 20px;
+      max-width: 100%;
+    }
+  }
+  

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Jadwal Kajian Subuh 2025</title>
+    <link rel="stylesheet" href="../css/login.css" />
+  </head>
+  <body>
+    <!-- Login Form -->
+    <section class="login-wrapper">
+      <div class="login-card">
+        <h2>Login</h2>
+        <p>Pilih User atau Admin untuk Login</p>
+        <form id="loginForm">
+          <div class="input-group">
+            <input type="text" id="username" name="username" required />
+            <label for="username">Username</label>
+          </div>
+          <div class="input-group">
+            <input type="password" id="password" name="password" required />
+            <label for="password">Password</label>
+            <button type="button" id="togglePassword">Lihat</button>
+          </div>
+          <div class="input-group">
+            <select id="role" name="role" required>
+              <option value="" disabled selected>Select</option>
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+          <button type="submit" class="login-btn">Login</button>
+          <p id="loginMessage" class="hidden"></p>
+        </form>
+        <div class="signup-option">
+          <p>Belum memiliki akun?</p>
+          <a href="/pages/daftar.html" class="signup-link">Daftar sebagai User atau Admin</a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Toggle password visibility
+      document.getElementById("togglePassword").addEventListener("click", function () {
+        const passwordField = document.getElementById("password");
+        const toggleButton = document.getElementById("togglePassword");
+
+        if (passwordField.type === "password") {
+          passwordField.type = "text";
+          toggleButton.textContent = "Sembunyikan";
+        } else {
+          passwordField.type = "password";
+          toggleButton.textContent = "Lihat";
+        }
+      });
+
+      // Handle form submission
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+          const role = document.getElementById("role").value;
+          const loginMessage = document.getElementById("loginMessage");
+
+          // Retrieve user data from localStorage
+          const storedUser = JSON.parse(localStorage.getItem(username));
+
+          // Simple validation
+          if (storedUser && storedUser.password === password && storedUser.role === role) {
+            sessionStorage.setItem("loggedIn", "true");
+            window.location.href = role === "admin" ? "../admin/admin.html" : "../index.html";
+          } else {
+            loginMessage.textContent = "Invalid username, password, or role";
+            loginMessage.classList.remove("hidden");
+            loginMessage.style.color = "red";
+          }
+        });
+    </script>
+  </body>
+</html>

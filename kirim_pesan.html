@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/kirim_pesan.css" />
+  </head>
+  <body>
+    <div
+      class="modal fade"
+      id="kirimPesanModal"
+      tabindex="-1"
+      aria-labelledby="kirimPesanLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="kirimPesanLabel">
+              Kirim Pesan kepada Admin
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="php/kirim_pesan.php" method="POST">
+              <div class="mb-3">
+                <label for="nama" class="form-label">Nama Anda:</label>
+                <input
+                  type="text"
+                  id="nama"
+                  name="nama"
+                  class="form-control"
+                  placeholder="Masukkan nama Anda"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Anda:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="Masukkan email Anda"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="pesan" class="form-label">Pesan Anda:</label>
+                <textarea
+                  id="pesan"
+                  name="pesan"
+                  class="form-control"
+                  rows="5"
+                  placeholder="Tulis pesan Anda di sini..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-success w-100">
+                Kirim Pesan
+              </button>
+            </form>
+            <script>
+              // Tangkap formulir kirim pesan
+              const form = document.querySelector(
+                'form[action="php/kirim_pesan.php"]' // Tidak ada perubahan di sini
+              );
+            
+              // Tambahkan event listener untuk submit form
+              form.addEventListener("submit", function (e) {
+                e.preventDefault(); // Mencegah pengiriman formulir default (Tidak diubah)
+            
+                // Ambil nilai input dari form
+                const nama = document.getElementById("nama").value; // Tidak diubah
+                const email = document.getElementById("email").value; // Tidak diubah
+                const pesan = document.getElementById("pesan").value; // Tidak diubah
+            
+                // Buat objek pesan
+                const pesanObj = {
+                  nama: nama, // Tidak diubah
+                  email: email, // Tidak diubah
+                  pesan: pesan, // Tidak diubah
+                  tanggal: new Date().toLocaleString(), // Tidak diubah
+                };
+            
+                // Ambil data notifikasi lama dari localStorage
+                const notifikasi =
+                  JSON.parse(localStorage.getItem("notifikasi")) || []; // Tidak diubah
+            
+                // Tambahkan pesan baru ke notifikasi
+                notifikasi.push(pesanObj); // Tidak diubah
+            
+                // Simpan kembali ke localStorage
+                localStorage.setItem("notifikasi", JSON.stringify(notifikasi)); // Tidak diubah
+            
+                // Berikan notifikasi sukses dan reset form
+                alert(
+                  "Pesan berhasil dikirim dan ditambahkan ke daftar notifikasi!" // Tidak diubah
+                );
+            
+                form.reset(); // Tidak diubah
+            
+                // Tambahkan kode untuk log data (Perubahan ditandai di sini)
+                console.log("Pesan berhasil disimpan ke localStorage:", pesanObj); // Perubahan: log pesanObj
+                console.log("Semua notifikasi saat ini:", notifikasi); // Perubahan: log semua notifikasi
+              });
+            </script>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

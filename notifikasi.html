@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notifikasi</title>
+    <link rel="stylesheet" href="/css/notifikasi.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>Notifikasi</h1>
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="notifikasi.html" class="active">Notifikasi</a>
+        <!-- <a href="beranda.html">Jadwal Terbaru</a>-->
+        <a href="update.html">Update Jadwal</a>
+        <a href="logout.html">Logout</a>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <section class="notifikasi-section">
+        <h2>Daftar Notifikasi</h2>
+        <ul class="notifikasi-list">
+          <li class="notifikasi-item">
+            <div class="notifikasi-info">
+              <p><strong>Notifikasi:</strong> Jadwal Kajian baru telah ditambahkan.</p>
+              <span class="tanggal">20 Januari 2025</span>
+            </div>
+            <button class="hapus-btn">Hapus</button>
+          </li>
+          <li class="notifikasi-item">
+            <div class="notifikasi-info">
+              <p><strong>Notifikasi:</strong> Update jadwal untuk tanggal 15 November 2024.</p>
+              <span class="tanggal">18 Januari 2025</span>
+            </div>
+            <button class="hapus-btn">Hapus</button>
+          </li>
+          <li class="notifikasi-item">
+            <div class="notifikasi-info">
+              <p><strong>Notifikasi:</strong> Notifikasi gagal terkirim ke nomor pengguna.</p>
+              <span class="tanggal">17 Januari 2025</span>
+            </div>
+            <button class="hapus-btn">Hapus</button>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <script src="/js/notif.js"></script>
+    <script>
+      // Fungsi untuk menampilkan daftar notifikasi dari localStorage
+      function tampilkanNotifikasi() {
+        const notifikasiList = document.querySelector('.notifikasi-list');
+        const notifikasi = JSON.parse(localStorage.getItem('notifikasi')) || [];
+    
+        // Kosongkan daftar sebelum menambahkan notifikasi baru
+        notifikasiList.innerHTML = '';
+    
+        if (notifikasi.length === 0) {
+          notifikasiList.innerHTML = '<p>Tidak ada notifikasi tersedia.</p>';
+        } else {
+          notifikasi.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.className = 'notifikasi-item';
+            li.innerHTML = `
+              <div class="notifikasi-info">
+                <p><strong>${item.nama}</strong>: ${item.pesan}</p>
+                <span class="tanggal">${item.tanggal}</span>
+              </div>
+              <button class="hapus-btn" data-index="${index}">Hapus</button>
+            `;
+            notifikasiList.appendChild(li);
+          });
+        }
+      }
+    
+      // Fungsi untuk menghapus notifikasi
+      document.querySelector('.notifikasi-list').addEventListener('click', function (e) {
+        if (e.target.classList.contains('hapus-btn')) {
+          const index = e.target.getAttribute('data-index');
+          const notifikasi = JSON.parse(localStorage.getItem('notifikasi')) || [];
+          notifikasi.splice(index, 1); // Hapus item sesuai indeks
+          localStorage.setItem('notifikasi', JSON.stringify(notifikasi)); // Simpan kembali
+          tampilkanNotifikasi(); // Refresh daftar notifikasi
+        }
+      });
+    
+      // Tampilkan daftar notifikasi saat halaman dimuat
+      window.onload = tampilkanNotifikasi;
+    </script>
+    
+  </body>
+</html>

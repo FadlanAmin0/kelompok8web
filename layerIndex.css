@@ -1,0 +1,159 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #2a9d8f;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #e9c46a;
+}
+
+/* Banner with Overlay */
+.banner {
+    position: relative;
+    text-align: center;
+    padding: 70px 20px;
+    background: url('banner-image.jpg') no-repeat center center/cover;
+    color: #fff;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 50px;
+}
+
+.banner h2 {
+    font-size: 32px;
+    margin: 0 0 15px;
+}
+
+.banner p {
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Background Image for the Website */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('/pages/img/Masjid_Agung_Al_Azhar.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    position: relative;
+}
+
+/* Overlay Effect to Dim the Background */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6); /* Adjust opacity here */
+    z-index: -1;
+}
+
+/* Content Wrapper to Keep Layout Consistent */
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Highlight Penceramah and Tema Styles */
+.penceramah .card {
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+}
+
+.penceramah .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.penceramah .card-img-top {
+    height: 250px; /* Uniform height for images */
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.penceramah .card-body {
+    padding: 20px;
+    background-color: #ffffff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.penceramah .card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2a9d8f;
+}
+
+.penceramah .card-text {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .penceramah .card-img-top {
+        height: 200px;
+    }
+
+    .penceramah .card-title {
+        font-size: 18px;
+    }
+
+    .penceramah .card-text {
+        font-size: 14px;
+    }
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2a9d8f;
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}

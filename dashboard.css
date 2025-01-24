@@ -1,0 +1,115 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  header {
+    background-color: #2a9d8f;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 24px;
+    padding-bottom: 20px;  /* This adds space between title and nav, matching update.css */
+  }
+  
+  header nav {
+    margin-top: 0px;
+  }
+  
+  header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    color: #e9c46a;
+}
+
+  header nav a.active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  /* Main Section */
+  main {
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #00796b;
+    margin-bottom: 10px;
+  }
+  
+  /* Statistic Cards */
+  .stats {
+    margin-bottom: 30px;
+  }
+  
+  .stat-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+  }
+  
+  .card h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00796b;
+  }
+  
+  /* Recent Activity Table */
+  .recent-activity table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .recent-activity th, .recent-activity td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .recent-activity th {
+    background-color: #2a9d8f;
+    color: white;
+  }
+  
+  .recent-activity td {
+    color: #555;
+  }
+  
+  .recent-activity tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .recent-activity tr:hover {
+    background-color: #e0f7fa;
+  }

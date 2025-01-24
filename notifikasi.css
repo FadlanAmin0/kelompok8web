@@ -1,0 +1,101 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+/* Header Styles */
+header {
+  background-color: #2a9d8f;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  padding-bottom: 20px;  /* This adds space between title and nav, matching update.css */
+}
+
+header nav {
+  margin-top: 0;  /* Remove margin since we're using padding on h1 */
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  color: #e9c46a;
+}
+
+header nav a.active {
+  text-decoration: underline;
+}
+
+/* Rest of your existing notifikasi.css styles */
+main {
+  padding: 20px;
+}
+
+h2 {
+  color: #2a9d8f;
+  margin-bottom: 20px;
+}
+
+.notifikasi-section {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.notifikasi-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notifikasi-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.notifikasi-item:last-child {
+  border-bottom: none;
+}
+
+.notifikasi-info p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.notifikasi-info .tanggal {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.hapus-btn {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.hapus-btn:hover {
+  background-color: #c62828;
+}
